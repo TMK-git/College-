@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label {
+    width: 60px;
+    height: 30px;
+    background: #ebebeb;
+    border-radius: 30px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    overflow: hidden; /* Ensure symbols don't overflow */
+}
+
+.sun-symbol, .moon-symbol {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+    z-index: 1; /* Ensure symbols are on top */
+}
+
+.sun-symbol {
+    left: 10px;
+    opacity: 1;
+}
+
+.moon-symbol {
+    right: 10px;
+    opacity: 0;
+}
+
+input:checked + label {
+    background: #242424;
+}
+
+input:checked + label .sun-symbol {
+    opacity: 0;
+}
+
+input:checked + label .moon-symbol {
+    opacity: 1;
+}
+
+.switch-knob {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 0; /* Ensure the knob is below the symbols */
+}
+
+input:checked + label .switch-knob {
+    left: calc(100% - 28px); /* Adjust position to end of the label */
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: -1;
+    position: absolute;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .background {
+    background: #242424;
+}
