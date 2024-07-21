@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    position: absolute;
+    top: 160px; /* Adjusted to proper pixel value */
+    left: 460px; /* Adjusted to proper pixel value */
+    width: 40vw;
+    height: 60vh;
+    z-index: -1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for some depth */
+    overflow: hidden; /* Ensures content fits within rounded corners */
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    background-color:#3700B3;
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #3700B3;
+    transform: translateY(-3px);
+}
+
+.button:active {
+    background-color: #3700B3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+
